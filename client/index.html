@@ -19,34 +19,59 @@
     <title>GroupThink</title>
   </head>
 
-  <header>
-    <section id="sidebar" class="sidebar">
-      <button>Back</button>
-      <div id="sidebarLinks" class="sidebarLinks">links</div>
-      <img src="" alt="profile image of" class="profileImg" />
+  <header role="banner">
+    <section id="sidebar" class="sidebar" aria-label="Sidebar Navigation">
+      <button aria-label="Back to homepage">Back</button>
+      <div
+        id="sidebarLinks"
+        class="sidebarLinks"
+        aria-label="Sidebar links"
+        role="navigation"
+      >
+        links
+      </div>
+      <img src="" alt="profile image" class="profileImg" />
     </section>
   </header>
 
   <body>
-    <section id="currentWinner" class="currentWinner">
+    <section
+      id="currentWinner"
+      class="currentWinner"
+      aria-labelledby="winnerTitle"
+    >
       <div class="winnerTitle">We are thinking:</div>
       <div class="thoughtBubble">
         <img src="" alt="" />
       </div>
     </section>
 
-    <div id="suggestionDiv" class="suggestionDiv">
+    <div
+      id="suggestionDiv"
+      class="suggestionDiv"
+      aria-labelledby="GroupThoughts"
+    >
       <h2 class="GroupThoughts">GroupThoughts:</h2>
-      <div class="dataDisplay"></div>
+      <div
+        class="dataDisplay"
+        role="region"
+        aria-label="Group suggestions list"
+      ></div>
     </div>
 
-    <form id="suggestionForm">
+    <form id="suggestionForm" aria-labelledby="catergoryTitle">
       <fieldset>
         <legend id="catergoryTitle">To Eat:</legend>
 
         <label for="suggestionQ">What are you thinking?</label>
-        <input type="text" name="suggestionBox" required />
-        <button type="submit">Suggest</button>
+        <input
+          type="text"
+          name="suggestionBox"
+          required
+          aria-required="true"
+          aria-label="Input suggestion box"
+        />
+        <button type="submit" aria-label="Submit suggestion">Suggest</button>
       </fieldset>
     </form>
   </body>
