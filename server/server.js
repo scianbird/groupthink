@@ -19,3 +19,15 @@ app.listen(8080, function () {
 app.get("/", function (request, response) {
   response.json({ message: "Welcome to our server" });
 });
+
+app.get("/getsugs", async (req, res) => {
+  const query = await db.query(
+    `SELECT * from groupthink_suggestion_table WHERE category_id = 1 ORDER BY suggestion_score DESC`
+  );
+  res.json(query.rows);
+});
+
+app.get("/getcats", async (req, res) => {
+  const query = await db.query(`SELECT * from groupthink_category_table`);
+  res.json(query.rows);
+});
