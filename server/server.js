@@ -24,10 +24,20 @@ app.get("/getsugs", async (req, res) => {
   const query = await db.query(
     `SELECT * from groupthink_suggestion_table WHERE category_id = 1 ORDER BY suggestion_score DESC`
   );
-  res.json(query.rows);
+
+  // get the rows - will be filtering them later
+  let data = query.rows;
+
+  // console.log("The data:", data);
+  res.json(data);
 });
 
-app.get("/getcats", async (req, res) => {
+app.get("/getsugs", async (req, res) => {
   const query = await db.query(`SELECT * from groupthink_category_table`);
-  res.json(query.rows);
+
+  // get the rows - will be filtering them later
+  let data = query.rows;
+
+  // console.log("The data:", data);
+  res.json(data);
 });
