@@ -1,13 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <script type="module" src="/src/main.js" defer></script>
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jim+Nightshade&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fonts end -->
+
+    <title>GroupThink</title>
   </head>
+
+  <header>
+    <section id="sidebar" class="sidebar">
+      <button>Back</button>
+      <div id="sidebarLinks" class="sidebarLinks">links</div>
+      <img src="" alt="profile image of" class="profileImg" />
+    </section>
+  </header>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <section id="currentWinner" class="currentWinner">
+      <div class="winnerTitle">We are thinking:</div>
+      <div class="thoughtBubble">
+        <img src="" alt="" />
+      </div>
+    </section>
+
+    <div id="suggestionDiv" class="suggestionDiv">
+      <h2 class="GroupThoughts">GroupThoughts:</h2>
+      <div class="dataDisplay"></div>
+    </div>
+
+    <form id="suggestionForm">
+      <fieldset>
+        <legend id="catergoryTitle">To Eat:</legend>
+
+        <label for="suggestionQ">What are you thinking?</label>
+        <input type="text" name="suggestionBox" required />
+        <button type="submit">Suggest</button>
+      </fieldset>
+    </form>
   </body>
 </html>
