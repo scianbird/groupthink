@@ -35,6 +35,13 @@
   </header>
 
   <body>
+    <!-- These are just placeholders,
+         these elements will be completly emptied during any update
+         expecting these div's to be relocated into a better position as you need.
+       -->
+    <div id="currentCatTitle"></div>
+    <div id="currentCatDiscr"></div>
+
     <section
       id="currentWinner"
       class="currentWinner"
@@ -57,6 +64,9 @@
         role="region"
         aria-label="Group suggestions list"
       ></div>
+      <!-- Chris: I added this div to hold all the suggestions
+      everything in here will be removed when the list updates -->
+      <div id="suggestionList"></div>
     </div>
 
     <form id="suggestionForm" aria-labelledby="catergoryTitle">
@@ -71,7 +81,9 @@
           aria-required="true"
           aria-label="Input suggestion box"
         />
-        <button type="submit" aria-label="Submit suggestion">Suggest</button>
+        <button id="subButton" type="submit" aria-label="Submit suggestion">
+          Suggest
+        </button>
       </fieldset>
     </form>
   </body>
