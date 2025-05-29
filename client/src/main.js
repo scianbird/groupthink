@@ -1,26 +1,26 @@
 const suggestionForm = document.querySelector("#suggestionForm");
-const suggestionButton = document.querySelector("#subButton");
 
 // note arrays from the database:cat table will need -1 to work correctly
 let currentCategory = 1;
 
-function handleSumbit(event) {
+function handleSubmit(event) {
   event.preventDefault();
+  const formSuggestion = new FormData(suggestionForm);
+  const formSuggestions = Object.fromEntries(formSuggestion);
 
-  const formSuggestion = new formSuggestion(suggestionForm);
-  const formSuggestions = Object.fromEntries(formSuggestions);
+  console.log("form data", formSuggestions);
 
-  fetch("http://localhost:8080/newsug", {
+  const reply = fetch("http://localhost:8080/newsug", {
     method: "POST",
-    body: JSON.stringify(formSuggestions),
-    header: {
+    headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify(formSuggestions),
   });
-  // console.log(formSuggestions);
+  console.log(formSuggestions);
 }
 
-suggestionButton.addEventListener("submit", handleSumbit);
+suggestionForm.addEventListener("submit", handleSubmit);
 
 async function getCategoryList() {
   const res = await fetch("http://localhost:8080/getcats");
@@ -41,7 +41,7 @@ async function getSuggestions() {
 function createSuggestionElements(suggestionArray) {
   const suggestionDiv = document.getElementById("suggestionList");
 
-  // remove all children of the elememnt holding the suggestions
+  // remove all children of the element holding the suggestions
   suggestionDiv.replaceChildren();
 
   suggestionArray.forEach((item) => {
@@ -99,7 +99,7 @@ async function renderSuggestions() {
 
 async function renderCategory() {
   const categoryArray = await getCategoryList();
-  // console.log("renderCategorys:", categoryArray);
+  // console.log("renderCats:", categoryArray);
   createCategoryElements(categoryArray, currentCategory);
 }
 

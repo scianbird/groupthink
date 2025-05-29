@@ -35,19 +35,19 @@ app.get("/getcats", async (req, res) => {
 });
 
 app.post("/newsug", (req, res) => {
-  const body = req.body;
+  let body = req.body;
+
   console.log(body);
 
   // sanity checks even though the client should behave, people don't!.
   // is suggestion empty ?
-  // check we have not got a suggestion with the same text ?
-  // maybe disable the submit button until we get an update from the back end
-  // res.json({ message: "Nope not doing that" });
 
   const query = db.query(
-    // TODO: correct the tablenames
-    `INSERT INTO groupthink_suggestion_table (category_id,suggestion,score) VALUES ($1,$2,$3)`,
-    [body.userName, body.userComment]
+    `INSERT INTO groupthink_suggestion_table (category_id,suggestion_description,suggestion_score) VALUES ($1,$2,$3)`,
+    [1, body.suggestionBox, 1]
   );
+
   res.json();
+
+  console.log("getsugs processed");
 });
