@@ -28,7 +28,7 @@ function handleSubmit(event) {
 suggestionForm.addEventListener("submit", handleSubmit);
 
 async function getCategoryList() {
-  const res = await fetch("dburl+http://localhost:8080/getcats");
+  const res = await fetch(dburl + "/getcats");
 
   const cats = await res.json();
   // console.log(cats);
@@ -36,7 +36,7 @@ async function getCategoryList() {
 }
 
 async function getSuggestions() {
-  const res = await fetch("dburl+http://localhost:8080/getsugs");
+  const res = await fetch(dburl + "/getsugs");
 
   const suggestions = await res.json();
   // console.log(suggestions);
