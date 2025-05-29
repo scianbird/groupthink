@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+.sidebar {
+  display: flex;
+  background-color: salmon;
+  flex-direction: column;
+  float: right;
+  height: 100vh;
+}
+
+.bottombar {
+  display: flex;
+  background-color: lightgoldenrodyellow;
+  height: 20vh;
+  justify-content: left;
+  align-items: last baseline;
+}
+
+.logobox {
+  height: 3rem;
+  width: auto;
+}
+
+.choicetiles {
+  background-image: url(/splashpage_bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.tile {
+  width: 15rem;
+  height: 15rem;
+}
+
+.tile:hover {
+  width: 15rem;
+  height: 15rem;
+  cursor: pointer;
+}
+
+.usericon {
+  width: 5rem;
+  height: 5rem;
+}
+
+.usericon:hover {
+  width: 7rem;
+  height: 7rem;
+  cursor: pointer;
+}
