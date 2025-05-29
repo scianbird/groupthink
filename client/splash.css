@@ -39,6 +39,7 @@
     height: 20vh;
     justify-content: left;
     align-items: last baseline;
+    margin-bottom: 2px;
   }
 
   .logobox {
@@ -85,10 +86,11 @@
 
   .icontext {
     text-wrap: wrap;
-    width: 4rem;
-    text-align: center;
-    padding-bottom: 5px;
-    color: aliceblue;
+    justify-self: center;
+    padding-bottom: 1px;
+    font-weight: 600;
+    color: #fff7ee;
+    text-shadow: 1px 1px #02274e;
   }
 }
 
@@ -109,8 +111,10 @@
 
   .bottombar {
     display: flex;
-    height: 10vh;
+    height: 25vh;
     justify-content: left;
+    align-items: start;
+    margin-bottom: 2px;
   }
 
   .logobox {
@@ -118,7 +122,7 @@
   }
 
   .choicetiles {
-    height: 85vh;
+    height: 80vh;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -135,6 +139,7 @@
   }
 
   .usericon {
+    display: flex;
     width: 5rem;
     height: 5rem;
   }
@@ -144,6 +149,7 @@
     height: 7rem;
     cursor: pointer;
   }
+
   .titleText {
     font-family: "Jersey 10";
     display: flex;
@@ -156,10 +162,11 @@
 
   .icontext {
     text-wrap: wrap;
-    width: 4rem;
-    text-align: center;
-    padding-bottom: 5px;
-    color: aliceblue;
+    justify-self: center;
+    padding-bottom: 1px;
+    font-weight: 600;
+    color: #fff7ee;
+    text-shadow: 1px 1px #02274e;
   }
 }
 
@@ -175,5 +182,12 @@
 
   .titleText {
     font-size: 1.5rem;
+  }
+
+  .icontext {
+    text-wrap: wrap;
+    justify-self: center;
+    padding-bottom: 5px;
+    color: #ffffff;
   }
 }

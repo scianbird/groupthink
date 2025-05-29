@@ -3,6 +3,15 @@
   padding: 0;
 }
 
+/*We'll call this "proof of concept" - info from here   https://webdesign.tutsplus.com/color-schemes-with-css-variables-and-javascript--cms-36989t*/
+:root,
+:root.junk {
+  --bg-img: url(/junkbg.png);
+}
+:root.goth {
+  --bg-img: url(/gothwallpaper.png);
+}
+
 /* keeping the hexcodes here for later styling:
 #EF767A light coral 
 #456990 lapis lazuli
@@ -19,17 +28,26 @@
   font-style: normal;
 }
 
+.castoro-regular {
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* add media queries for phone/desktop styling - although I know that I could set some global styling (eg background image), it may be better to create a background image with both screen orientations in mind, rather than attempt to centre the focus by css positioning 
-taking the breakpoints from this image: https://browserstack.wpenginepowered.com/wp-content/uploads/2024/08/Common-Breakpoints-for-Responsive-Design.png */
+taking the breakpoints from this image: https://browserstack.wpenginepowered.com/wp-content/uploads/2024/08/Common-Breakpoints-for-Responsive-Design.png 
+https://lusthome.com/products/medusa-wallpaper-in-green-ink-and-colourfornia*/
 
 @media only screen and (max-width: 768px) {
   body {
     /* background-color: aqua; using background colour as a visual test that the breakpoint is working */
-    background-image: url(/background_image.png);
+    background-image: var(--bg-img);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .sidebar {
-    background-color: brown;
     font-family: "Jersey 10";
     display: flex;
     width: 7rem;
@@ -38,31 +56,48 @@ taking the breakpoints from this image: https://browserstack.wpenginepowered.com
     height: 100vh;
   }
 
-  .winnerTitle {
-    background-color: blueviolet;
-    display: flex;
-  }
-
   .current-winning-vote {
     background-color: yellow;
   }
 
-  .suggestions {
-    background-color: darkviolet;
+  .suggestionList {
+    max-height: 200px;
   }
 
-  .form {
-    background-color: green;
+  .voteButton {
+    margin-bottom: 10px; /*this is not how I originally planned to do this, I imagined a for-each which would allow me to break apart each constructed div and not just one overall div - I can still space out the choices so that it's visually easier to see which button = which choice*/
+    width: 100px;
+    align-self: center;
+    border-radius: 50%;
+    border: #eeb868;
+    color: white;
+  }
+
+  .userSug {
+    color: black;
+    font-family: "Castoro";
+    font-size: 1rem;
+    margin-top: 3px;
+  }
+
+  .userScore {
+    color: #d05a5a;
+    font-family: "Castoro";
+    font-size: 1rem;
   }
 }
 
 @media only screen and (min-width: 769px) {
   body {
-    background-image: url(/background_image.png); /* using background colour as a visual test that the breakpoint is working */
+    background-image: var(
+      --bg-img
+    ); /*sorry i accidentally made a massive image .. well we have to live with it unless i find time to fix it!*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* using background colour as a visual test that the breakpoint is working */
   }
 
   .sidebar {
-    background-color: brown;
     font-family: "Jersey 10";
     display: flex;
     width: 10rem;
@@ -70,4 +105,144 @@ taking the breakpoints from this image: https://browserstack.wpenginepowered.com
     float: right;
     height: 100vh;
   }
+}
+
+.winnerTitle {
+  font-family: "Jersey 10";
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-shadow: 3px 3px #010c17;
+  background-color: rgba(28, 27, 27, 0.3);
+  padding: 2rem;
+}
+
+.GroupThoughts {
+  font-family: "Jersey 10";
+  font-size: 3rem;
+  color: black;
+  margin-left: 1rem;
+  text-shadow: 3px 3px rgba(239, 235, 235, 0.604);
+}
+
+.suggestionList {
+  background-image: url(/junkchoicesbg.png);
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  max-height: 298px;
+  overflow: scroll;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.voteButton {
+  justify-self: center;
+  background-color: #eeb868;
+  margin-bottom: 25px; /*this is not how I originally planned to do this, I imagined a for-each which would allow me to break apart each constructed div and not just one overall div - I can still space out the choices so that it's visually easier to see which button = which choice*/
+  width: 100px;
+  align-self: center;
+  border-radius: 50%;
+  border: #eeb868;
+  color: white;
+}
+
+.voteButton:hover {
+  cursor: pointer;
+  background-color: #eee368;
+}
+
+.userSug {
+  color: black;
+  font-family: "Castoro";
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.userScore {
+  color: #d05a5a;
+  font-family: "Castoro";
+  font-size: 1.2rem;
+}
+
+.suggestionForm {
+  margin-left: 10px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputBox {
+  width: auto;
+  height: 3rem;
+  background-color: #d2e8f6;
+  border: none;
+}
+
+.subButton {
+  border: none;
+  margin: 10px;
+  width: 5rem;
+  background-color: #eeb868;
+  color: rgb(27, 15, 2);
+  padding: 0.3rem;
+  border-radius: 50%;
+  font-family: "Castoro";
+}
+
+.subButton:hover {
+  cursor: pointer;
+  background-color: #eee368;
+}
+
+.catergoryTitle {
+  font-family: "Jersey 10";
+  font-size: 2.5rem;
+  color: black;
+  margin-left: 1rem;
+  text-shadow: 3px 3px rgba(239, 235, 235, 0.604);
+}
+
+.suggestionQ {
+  color: white;
+  background-color: rgba(28, 27, 27, 0.3);
+  padding: 1rem;
+}
+
+.currentCatTitle {
+  display: none;
+}
+
+.currentCatDiscr {
+  display: none;
+}
+
+.profileImg {
+  margin: 1rem;
+  display: flex;
+  width: 5rem;
+  align-self: center;
+}
+
+.profileImg:hover {
+  width: 6rem;
+}
+
+.previous {
+  display: flex;
+  font-family: "Jersey 10";
+  justify-content: right;
+  font-size: 2rem;
+  color: black;
+  margin-right: 1rem;
+  text-shadow: 3px 3px rgba(239, 235, 235, 0.604);
+}
+
+.yourProfile {
+  display: flex;
+  align-self: center;
 }
