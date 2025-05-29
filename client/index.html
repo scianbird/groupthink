@@ -13,33 +13,49 @@
     <title>groupthink</title>
   </head>
   <body>
-    <header class="sidebar">
+    <header
+      class="sidebar"
+      role="banner"
+      aria-label="groupthink logo and navigation"
+    >
       <div class="logobox"><img src="logotext.png" class="logobox" /></div>
     </header>
 
-    <section class="landingpage"></section>
-    <div class="titletext">Groupchat getting too messy? Have a groupthink!</div>
-    <div class="choicetiles">
-      <a href="/cat.html">
+    <section class="landingpage" aria-label="Landing page"></section>
+    <div class="titletext" role="heading"></div>
+    <span class="titleText"
+      >Groupchat getting too messy? Have a groupthink!</span
+    >
+    <div class="choicetiles" role="navigation" aria-label="Catergory choice">
+      <a href="/cat.html" aria-label="Vote on what and where to eat">
         <img
           src="/foodtile.png"
           class="tile"
           alt="A link to a voting page. This link is for the decision What and where to eat"
           tabindex="1"
       /></a>
+      <a
+        href="/cat2.html"
+        aria-label="Vote on songs in the current playlist"
+      ></a>
       <img
         src="/musictile.png"
         class="tile"
         tabindex="2"
         alt="A link to a voting page. This link is for songs in the current playlist"
-      /><img
+      />
+      <a
+        href="/cat3.html"
+        aria-label="Vote on sightseeing stops we should make along the way"
+      ></a>
+      <img
         src="/stopstile.png"
         class="tile"
         tabindex="3"
         alt="A link to a voting page. This link is for sightseeing stops we should make along the way"
       />
     </div>
-    <div class="bottombar">
+    <div class="bottombar" role="contentinfo" aria-label="Group members">
       <p class="icontext">Your group:</p>
       <img src="/usericon1.png" class="usericon" tabindex="4" /><img
         src="/usericon2.png"

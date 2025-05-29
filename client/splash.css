@@ -19,72 +19,161 @@
   font-style: normal;
 }
 
-body {
-  background-image: url(splashbackground.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: url(splashbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    height: 100vh;
+  }
+
+  .bottombar {
+    display: flex;
+    height: 20vh;
+    justify-content: left;
+    align-items: last baseline;
+  }
+
+  .logobox {
+    width: 4rem;
+  }
+
+  .choicetiles {
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+
+  .tile {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tile:hover {
+    width: 15rem;
+    height: 15rem;
+    cursor: pointer;
+  }
+
+  .usericon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .usericon:hover {
+    width: 7rem;
+    height: 7rem;
+    cursor: pointer;
+  }
+  .titleText {
+    font-family: "Jersey 10";
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    padding-top: 5px;
+    color: #02274e;
+  }
+
+  .icontext {
+    text-wrap: wrap;
+    width: 4rem;
+    text-align: center;
+    padding-bottom: 5px;
+    color: aliceblue;
+  }
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  float: right;
-  height: 100vh;
+@media only screen and (min-width: 769px) {
+  body {
+    background-image: url(splashbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    height: 100vh;
+  }
+
+  .bottombar {
+    display: flex;
+    height: 10vh;
+    justify-content: left;
+  }
+
+  .logobox {
+    width: 4rem;
+  }
+
+  .choicetiles {
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+
+  .tile {
+    width: 19rem;
+    height: 19rem;
+  }
+
+  .tile:hover {
+    cursor: pointer;
+  }
+
+  .usericon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .usericon:hover {
+    width: 7rem;
+    height: 7rem;
+    cursor: pointer;
+  }
+  .titleText {
+    font-family: "Jersey 10";
+    display: flex;
+    font-size: 3.5rem;
+    justify-content: center;
+    padding-top: 5px;
+    color: #eeb868;
+    text-shadow: 3px 3px #02274e;
+  }
+
+  .icontext {
+    text-wrap: wrap;
+    width: 4rem;
+    text-align: center;
+    padding-bottom: 5px;
+    color: aliceblue;
+  }
 }
 
-.bottombar {
-  display: flex;
-  height: 20vh;
-  justify-content: left;
-  align-items: last baseline;
-}
+@media only screen and (max-width: 500px) {
+  .tile {
+    width: 14.5rem;
+    height: 14.5rem;
+  }
 
-.logobox {
-  width: 4rem;
-}
+  .bottombar {
+    padding-bottom: 10px;
+  }
 
-.choicetiles {
-  height: 75vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: space-evenly;
-}
-
-.tile {
-  width: 15rem;
-  height: 15rem;
-}
-
-.tile:hover {
-  width: 15rem;
-  height: 15rem;
-  cursor: pointer;
-}
-
-.usericon {
-  width: 5rem;
-  height: 5rem;
-}
-
-.usericon:hover {
-  width: 7rem;
-  height: 7rem;
-  cursor: pointer;
-}
-.titletext {
-  font-family: "Jersey 10";
-  display: flex;
-  font-size: 2rem;
-  justify-content: center;
-  padding-top: 5px;
-}
-
-.icontext {
-  text-wrap: wrap;
-  width: 4rem;
-  text-align: center;
-  padding-bottom: 5px;
-  color: aliceblue;
+  .titleText {
+    font-size: 1.5rem;
+  }
 }
