@@ -4,29 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="splash.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jim+Nightshade&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
     <title>groupthink</title>
   </head>
   <body>
     <header class="sidebar">
-      <div class="logobox"><img src="" class="logobox" />logo here</div>
+      <div class="logobox"><img src="logotext.png" class="logobox" /></div>
     </header>
 
     <section class="landingpage"></section>
+    <div class="titletext">Groupchat getting too messy? Have a groupthink!</div>
     <div class="choicetiles">
-      <a href="/cat.html"> <img src="/foodtile.png" class="tile" /></a>
-      <img src="/musictile.png" class="tile" /><img
+      <a href="/cat.html">
+        <img
+          src="/foodtile.png"
+          class="tile"
+          alt="A link to a voting page. This link is for the decision What and where to eat"
+          tabindex="1"
+      /></a>
+      <img
+        src="/musictile.png"
+        class="tile"
+        tabindex="2"
+        alt="A link to a voting page. This link is for songs in the current playlist"
+      /><img
         src="/stopstile.png"
         class="tile"
+        tabindex="3"
+        alt="A link to a voting page. This link is for sightseeing stops we should make along the way"
       />
     </div>
     <div class="bottombar">
-      <img src="/usericon1.png" class="usericon" /><img
+      <p class="icontext">Your group:</p>
+      <img src="/usericon1.png" class="usericon" tabindex="4" /><img
         src="/usericon2.png"
         class="usericon"
-      /><img src="/usericon3.png" class="usericon" /><img
+        tabindex="5"
+      /><img src="/usericon3.png" class="usericon" tabindex="6" /><img
         src="/usericon4.png"
         class="usericon"
-      /><img src="/usericon5.png" class="usericon" />
+        tabindex="7"
+      /><img src="/usericon5.png" class="usericon" tabindex="8" />
     </div>
   </body>
 </html>
