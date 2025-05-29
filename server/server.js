@@ -37,7 +37,7 @@ app.get("/getcats", async (req, res) => {
 app.post("/newsug", (req, res) => {
   let body = req.body;
 
-  console.log(body);
+  // console.log(body);
 
   // sanity checks even though the client should behave, people don't!.
   // is suggestion empty ?
@@ -49,31 +49,38 @@ app.post("/newsug", (req, res) => {
 
   res.json();
 
-  console.log("getsugs processed");
+  // console.log("getsugs processed");
 });
 
 app.post("/newvote", (req, res) => {
   let body = req.body;
 
-  console.log("newvote:", body);
-
-  // get the current score
-  const currentScore = getScore(body.currentCategory, body.suggestionID);
-
-  console.log("got score:", currentScore);
-  // const query = db.query(
-  //   `INSERT INTO groupthink_suggestion_table (category_id,suggestion_description,suggestion_score) VALUES ($1,$2,$3)`,
-  //   [1, body.suggestionBox, 1]
-  // );
-
+  updateScore(body.currentCategory, body.suggestionID);
   res.json();
 
-  console.log("newVote processed");
+  // console.log("newVote processed");
 });
 
-async function getScore(catID, sugID) {
+async function updateScore(catID, sugID) {
+  // console.log(
+  //   `SELECT * from groupthink_suggestion_table WHERE category_id = ${catID} AND id =${sugID};`
+  // );
+
   const query = await db.query(
-    `SELECT * from groupthink_suggestion_table WHERE id =${sugID} AND category_id = ${catID}`
+    `SELECT * from groupthink_suggestion_table WHERE category_id = ${catID} AND id =${sugID};`
   );
-  console.log("getScore query:", query);
+
+  if (query.rowCount != 1) {
+    console.log("ERROR: getScore call failed to get suggestion_score");
+    return -1;
+  }
+
+  // console.log("query returned -> ", query.rows[0].suggestion_score);
+
+  let score = query.rows[0].suggestion_score;
+
+  const query2 = await db.query(
+    `UPDATE groupthink_suggestion_table SET suggestion_score = ${score + 1} 
+    where category_id = ${catID} AND id =${sugID}`
+  );
 }
