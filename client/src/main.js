@@ -2,13 +2,15 @@ const suggestionForm = document.querySelector("#suggestionForm");
 
 // note arrays from the database:cat table will need -1 to work correctly
 let currentCategory = 1;
+const updateDelay = 500;
+const refreshDelay = 4000;
 
 function handleSubmit(event) {
   event.preventDefault();
   const formSuggestion = new FormData(suggestionForm);
   const formSuggestions = Object.fromEntries(formSuggestion);
 
-  console.log("form data", formSuggestions);
+  // console.log("form data", formSuggestions);
 
   const reply = fetch("http://localhost:8080/newsug", {
     method: "POST",
@@ -17,7 +19,9 @@ function handleSubmit(event) {
     },
     body: JSON.stringify(formSuggestions),
   });
-  console.log(formSuggestions);
+  // console.log(formSuggestions);
+
+  setTimeout(renderSuggestions, updateDelay);
 }
 
 suggestionForm.addEventListener("submit", handleSubmit);
@@ -44,26 +48,37 @@ function createSuggestionElements(suggestionArray) {
   // remove all children of the element holding the suggestions
   suggestionDiv.replaceChildren();
 
+  let thisOnly = true;
   suggestionArray.forEach((item) => {
-    // create the elements
-    const userSug = document.createElement("p");
-    const userScore = document.createElement("p");
-    const voteButton = document.createElement("button");
+    if (thisOnly) {
+      // console.log("JUST ONCE", item.suggestion_description);
+      thisOnly = false;
+      //get the Top
+      const theWinner = document.getElementById("winnerTitle");
+      theWinner.textContent = `We are thinking:${item.suggestion_description} with ${item.suggestion_score} votes`;
+    } else {
+      // console.log("All The Rest", item.suggestion_description);
 
-    // update the elements
-    userSug.textContent = item.suggestion_description;
-    userScore.textContent = item.suggestion_score;
+      // create the elements
+      const userSug = document.createElement("p");
+      const userScore = document.createElement("p");
+      const voteButton = document.createElement("button");
 
-    //TODO: I expect this will be sorted in CSS if so this can/should be removed!
-    voteButton.textContent = "+";
+      // update the elements
+      userSug.textContent = item.suggestion_description;
+      userScore.textContent = item.suggestion_score;
 
-    voteButton.id = parseInt(item.id);
-    voteButton.addEventListener("click", voteButtonHandler);
+      // TODO: This can be removed once the CSS is added for the vote buttons
+      voteButton.textContent = "+";
 
-    // append the elements
-    suggestionDiv.appendChild(userSug);
-    suggestionDiv.appendChild(userScore);
-    suggestionDiv.appendChild(voteButton);
+      voteButton.id = parseInt(item.id);
+      voteButton.addEventListener("click", voteButtonHandler);
+
+      // append the elements
+      suggestionDiv.appendChild(userSug);
+      suggestionDiv.appendChild(userScore);
+      suggestionDiv.appendChild(voteButton);
+    }
   });
 }
 
@@ -72,11 +87,7 @@ function createSuggestionElements(suggestionArray) {
 // with this id to update the database.
 function voteButtonHandler(event) {
   const idx = parseInt(event.target.id);
-  console.log("got vote button for index:", idx);
-  //TODO: call that route from here
   const voteData = { currentCategory: currentCategory, suggestionID: idx };
-
-  console.log("voteData:", voteData);
 
   fetch("http://localhost:8080/newvote", {
     method: "POST",
@@ -87,6 +98,7 @@ function voteButtonHandler(event) {
   });
 
   //TODO: call renderSuggestions in 1 second so this client can see the update sooner than waiting for the regular refresh.
+  setTimeout(renderSuggestions, updateDelay);
 }
 
 //TODO: this will need to be altered when/if we have more than one category.
@@ -121,5 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // initial display of the database table data
   renderSuggestions();
   renderCategory();
-  //TODO: start the regular suggestions update
+  setInterval(() => {
+    renderSuggestions();
+  }, refreshDelay);
 });
