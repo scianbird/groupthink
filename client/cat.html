@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/main.js" defer></script>
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jim+Nightshade&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fonts end -->
+
+    <title>GroupThink</title>
+  </head>
+
+  <header role="banner">
+    <section id="sidebar" class="sidebar" aria-label="Sidebar Navigation">
+      <a href="index.html" class="previous" aria-label="Back to homepage"
+        >Previous</a
+      >
+      <div
+        id="sidebarLinks"
+        class="sidebarLinks"
+        aria-label="Sidebar links"
+        role="navigation"
+      >
+        links
+      </div>
+      <img src="" alt="profile image" class="profileImg" />
+    </section>
+  </header>
+
+  <body>
+    <!-- These are just placeholders,
+         these elements will be completely emptied during any update
+         expecting these div's to be relocated into a better position as you need.
+       -->
+    <div id="currentCatTitle"></div>
+    <div id="currentCatDiscr"></div>
+
+    <section
+      id="currentWinner"
+      class="currentWinner"
+      aria-labelledby="winnerTitle"
+    >
+      <div class="winnerTitle">We are thinking:</div>
+      <div class="thoughtBubble">
+        <img src="" alt="" />
+      </div>
+    </section>
+
+    <div
+      id="suggestionDiv"
+      class="suggestionDiv"
+      aria-labelledby="GroupThoughts"
+    >
+      <h2 class="GroupThoughts">GroupThoughts:</h2>
+      <div
+        class="dataDisplay"
+        role="region"
+        aria-label="Group suggestions list"
+      ></div>
+      <!-- Chris: I added this div to hold all the suggestions
+      everything in here will be removed when the list updates -->
+      <div id="suggestionList"></div>
+    </div>
+
+    <form id="suggestionForm" aria-labelledby="catergoryTitle">
+      <fieldset>
+        <legend id="catergoryTitle">To Eat:</legend>
+
+        <label for="suggestionQ">What are you thinking?</label>
+        <input
+          type="text"
+          name="suggestionBox"
+          required
+          aria-required="true"
+          aria-label="Input suggestion box"
+        />
+        <button id="subButton" type="submit" aria-label="Submit suggestion">
+          Suggest
+        </button>
+      </fieldset>
+    </form>
+  </body>
+</html>
