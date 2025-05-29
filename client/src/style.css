@@ -11,21 +11,36 @@
 #EEB868 earth yellow */
 
 /* Fonts - Jersey 10, Playpen Sans Arabic */
+/*https://www.vecteezy.com/png/25351686-white-tape-on-transparent-background*/
+
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 /* add media queries for phone/desktop styling - although I know that I could set some global styling (eg background image), it may be better to create a background image with both screen orientations in mind, rather than attempt to centre the focus by css positioning 
 taking the breakpoints from this image: https://browserstack.wpenginepowered.com/wp-content/uploads/2024/08/Common-Breakpoints-for-Responsive-Design.png */
 
 @media only screen and (max-width: 768px) {
   body {
-    background-color: aqua; /* using background colour as a visual test that the breakpoint is working */
+    /* background-color: aqua; using background colour as a visual test that the breakpoint is working */
+    background-image: url(/background_image.png);
   }
 
-  .SIDEBAR {
+  .sidebar {
     background-color: brown;
+    font-family: "Jersey 10";
+    display: flex;
+    width: 7rem;
+    flex-direction: column;
+    float: right;
+    height: 100vh;
   }
 
-  .current-winning-vote-title {
+  .winnerTitle {
     background-color: blueviolet;
+    display: flex;
   }
 
   .current-winning-vote {
@@ -43,6 +58,16 @@ taking the breakpoints from this image: https://browserstack.wpenginepowered.com
 
 @media only screen and (min-width: 769px) {
   body {
-    background-color: hotpink; /* using background colour as a visual test that the breakpoint is working */
+    background-image: url(/background_image.png); /* using background colour as a visual test that the breakpoint is working */
+  }
+
+  .sidebar {
+    background-color: brown;
+    font-family: "Jersey 10";
+    display: flex;
+    width: 10rem;
+    flex-direction: column;
+    float: right;
+    height: 100vh;
   }
 }
