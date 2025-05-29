@@ -20,8 +20,8 @@ function handleSubmit(event) {
     body: JSON.stringify(formSuggestions),
   });
   // console.log(formSuggestions);
-
   setTimeout(renderSuggestions, updateDelay);
+  suggestionForm.reset();
 }
 
 suggestionForm.addEventListener("submit", handleSubmit);
