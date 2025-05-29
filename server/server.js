@@ -51,3 +51,29 @@ app.post("/newsug", (req, res) => {
 
   console.log("getsugs processed");
 });
+
+app.post("/newvote", (req, res) => {
+  let body = req.body;
+
+  console.log("newvote:", body);
+
+  // get the current score
+  const currentScore = getScore(body.currentCategory, body.suggestionID);
+
+  console.log("got score:", currentScore);
+  // const query = db.query(
+  //   `INSERT INTO groupthink_suggestion_table (category_id,suggestion_description,suggestion_score) VALUES ($1,$2,$3)`,
+  //   [1, body.suggestionBox, 1]
+  // );
+
+  res.json();
+
+  console.log("newVote processed");
+});
+
+async function getScore(catID, sugID) {
+  const query = await db.query(
+    `SELECT * from groupthink_suggestion_table WHERE id =${sugID} AND category_id = ${catID}`
+  );
+  console.log("getScore query:", query);
+}

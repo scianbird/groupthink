@@ -73,8 +73,19 @@ function createSuggestionElements(suggestionArray) {
 function voteButtonHandler(event) {
   const idx = parseInt(event.target.id);
   console.log("got vote button for index:", idx);
-  //TODO: add route to server to increase the vote for suggestion with given index
   //TODO: call that route from here
+  const voteData = { currentCategory: currentCategory, suggestionID: idx };
+
+  console.log("voteData:", voteData);
+
+  fetch("http://localhost:8080/newvote", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(voteData),
+  });
+
   //TODO: call renderSuggestions in 1 second so this client can see the update sooner than waiting for the regular refresh.
 }
 
