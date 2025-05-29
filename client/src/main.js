@@ -4,6 +4,7 @@ const suggestionForm = document.querySelector("#suggestionForm");
 let currentCategory = 1;
 const updateDelay = 500;
 const refreshDelay = 4000;
+const dburl = "https://groupthink-server.onrender.com";
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -12,7 +13,7 @@ function handleSubmit(event) {
 
   // console.log("form data", formSuggestions);
 
-  const reply = fetch("http://localhost:8080/newsug", {
+  const reply = fetch(dburl + "/newsug", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -27,7 +28,7 @@ function handleSubmit(event) {
 suggestionForm.addEventListener("submit", handleSubmit);
 
 async function getCategoryList() {
-  const res = await fetch("http://localhost:8080/getcats");
+  const res = await fetch("dburl+http://localhost:8080/getcats");
 
   const cats = await res.json();
   // console.log(cats);
@@ -35,7 +36,7 @@ async function getCategoryList() {
 }
 
 async function getSuggestions() {
-  const res = await fetch("http://localhost:8080/getsugs");
+  const res = await fetch("dburl+http://localhost:8080/getsugs");
 
   const suggestions = await res.json();
   // console.log(suggestions);
@@ -89,7 +90,7 @@ function voteButtonHandler(event) {
   const idx = parseInt(event.target.id);
   const voteData = { currentCategory: currentCategory, suggestionID: idx };
 
-  fetch("http://localhost:8080/newvote", {
+  fetch(dburl + "/newvote", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -97,7 +98,6 @@ function voteButtonHandler(event) {
     body: JSON.stringify(voteData),
   });
 
-  //TODO: call renderSuggestions in 1 second so this client can see the update sooner than waiting for the regular refresh.
   setTimeout(renderSuggestions, updateDelay);
 }
 
