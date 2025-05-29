@@ -43,4 +43,16 @@ Day One was mainly spent planning and assigning overall "roles" within the team.
 
 The repo was set up collaboratively (allowing us experience in merging/pulling/approving branches) and in the final hour of Day One we set goals for Day Two.
 
-Day Two had the underlining goal of "have our minimum viable product complete and tested" and so we all worked on each "block" of the app - index, CSS and the database.
+Day Two had the ultimate goal of "have our minimum viable product complete and tested" and so we all worked on each "block" of the app - index, CSS and the database - and then came together in order to group test and talk each other through the progress made at regular intervals, so that others could offer differing approaches to an in-work feature.
+
+The result was an incredibly collaborative day with group coding sessions followed by group testing, as well as group debugging sessions whenever an error could not be spied by a solo team member. The workload of the day was large, and we ended up behind where we wanted to be -- but as we had been ambitious with our aim it was clear we were still making good pace.
+
+On the side, group members experiemented with some features that they hoped to implement, but had less experience / comfort working on: be that front end styling, or a function/query in the backend. This was done in what we called "isolated code" with a file not linked to the github repo, but with the necessary information to allow the experiments to take place. This was particularly useful in avoiding file conflicts (most, if not all, pushes/pulls were done with screen sharing or with step by step narration by the person working on it) and even if that was not the most ideal way to work in terms of a reality-based workflow we managed to avoid conflicts in the project 🎉
+
+Day Three (the final day of coding) started with the group stuck on what exactly was preventing our data from reaching the database. Although it was a demoralising start, thanks to Manny the problem was solved and tasks were completed in quick sucession after that. This was another day of group coding, as well ad group testing. The main aim was to get the MVP deployed on render before the end of the day -- this way, we could receieve support for any issues we faced.
+
+Stretch goals largely were not met, although we wrote the code from the beginning with the ease of duplicating in mind, and the idea was that we would simply be able to make additional "categories" with much more ease. Although we only have the one, we created placeholder icons for examples of other categories on the splashpage, as well as placeholder user icons that (in theory) would link to the user profiles.
+
+Throughout the week, in self-reflection hour, we worked on the documentation and our presentation, ensuring that we would be in a good place on Friday when it was time to present.
+
+## Reflections
