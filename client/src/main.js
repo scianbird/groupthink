@@ -56,24 +56,27 @@ function createSuggestionElements(suggestionArray) {
       thisOnly = false;
       //get the Top
       const theWinner = document.getElementById("winnerTitle");
-      theWinner.textContent = `We are thinking:${item.suggestion_description} with ${item.suggestion_score} votes`;
+      theWinner.textContent = `We're thinking: ${item.suggestion_description} (with ${item.suggestion_score} votes)`;
     } else {
       // console.log("All The Rest", item.suggestion_description);
 
       // create the elements
       const userSug = document.createElement("p");
-      const userScore = document.createElement("p");
+      const userScore = document.createElement("span");
       const voteButton = document.createElement("button");
 
       // update the elements
       userSug.textContent = item.suggestion_description;
       userScore.textContent = item.suggestion_score;
+      userSug.className = "userSug";
+      userScore.className = "userScore";
 
       // TODO: This can be removed once the CSS is added for the vote buttons
       voteButton.textContent = "+";
 
       voteButton.id = parseInt(item.id);
       voteButton.addEventListener("click", voteButtonHandler);
+      voteButton.className = "voteButton";
 
       // append the elements
       suggestionDiv.appendChild(userSug);
@@ -136,4 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     renderSuggestions();
   }, refreshDelay);
+});
+
+const setTheme = (theme) => (document.documentElement.className = theme);
+document.getElementById("theme-select").addEventListener("change", function () {
+  setTheme(this.value);
 });
