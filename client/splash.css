@@ -21,7 +21,7 @@
 
 @media only screen and (max-width: 768px) {
   body {
-    background-image: url(splashbackground.png);
+    background-image: url(/splashbackground.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -96,7 +96,7 @@
 
 @media only screen and (min-width: 769px) {
   body {
-    background-image: url(splashbackground.png);
+    background-image: url(/splashbackground.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

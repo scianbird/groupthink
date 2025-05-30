@@ -56,3 +56,25 @@ Stretch goals largely were not met, although we wrote the code from the beginnin
 Throughout the week, in self-reflection hour, we worked on the documentation and our presentation, ensuring that we would be in a good place on Friday when it was time to present.
 
 ## Reflections
+
+#### Chris
+
+Planning was straight forward, no conflicts, hand to hand combat or rude words, for a moment I thought I was in the wrong group, ideas fomented from three directions and they all just merged into the plan. we managed to collectively build the database table ready for use the following day.
+
+Originally I put forward the idea of a single table, with the view of leaving the 'other' columns unused, This was my worst idea this week.
+
+By the time we got to the stand up meeting on the second day I had redesigned the table into two (we have categories and suggestions), and put this idea forward at meeting and we moved forward with a better database schema.
+
+We aimed to have the MVP up and running my the end of the day, but syntax snags slowed my progress down, along with the unfamiliar workflow, I have never used anything more than a text file for project management so Trello took a little time away from the coding. being new to using git branches. we got a lot of practice on that over the remaining time.
+
+We called in backup (Manny) to spot a missing s in headers, that had me stumpped for more time that I'd like to admit but other than correcting paths with the help of Joe during the deployment it all came together, In the end happy with the result, despite a fair bit of frowning and head scratching.
+
+#### Becca
+
+I am really pleased with how the project went and I feel like I had the best of both worlds in terms of doing both back and front end coding. I loved how ambitious we all were to scale the project as big as we could in the timespan, as time is often what limits my own personal projects and basic functionality has to take precedence. This meant I got an opportunity to properly play with CSS elements like media queries and ARIAs, somewhat confidently use branches in git, and even take the time to learn something new with the polling function. I really enjoyed collaborating with our team and I feel like it kept me from feeling stuck, as there was always something to either work on or help with, and facing blocks was much easier with three pairs of eyes.
+
+#### Claire
+
+I feel like this has been the most ambitious project I have worked on so far, but the collaborative effort of the team never let it feel like a daunting task, and I felt very quickly that we were working well together. All debugging and testing was done as a team, and although I didn't get to include some aspects of the styling that I had planned (for example, a more robust theme-change), I learned several things that I know I will be able to make use of in the future: polling, the ability to change themes and the value of being able to talk through the logic of a project at each step.
+
+I feel like we've done a good job in creating a (somewhat) complete app that is also easily scaleable, and it was a pleasure to work with my teammates. Also, of course, a special thank you to Manny and Joe for helping us hop over the blocks when they were encountered (render deployment... (shaking my fist at the sky)).
