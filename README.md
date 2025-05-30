@@ -11,7 +11,17 @@ What's left for you to take care of? Well, to make it fun!
 
 ## The Thoughts
 
+Our team consisted of Becca, Chris and Claire.
+
 We began this group project by thinking of and pitching ideas for a problem-solving app. Given the context of this decision, the idea of "an app that helps groups make decisions" was a natural suggestion and won unanimously. We made a concious decision to design this app in a way that would utilise the features of previous assignment projects and build on what we had already created.
+
+The Wireframe was created together on Figma, as it allows for real-time interaction, and a base colour scheme was decided by selecting a palette on https://coolors.co which allowed us to make styling decisions more efficient. We kept breakpoints in mind while designing the wireframes,
+
+![wireframe images for 2 breakpoints](/misc/wireframes.png)
+
+**Render links:** https://groupthink-static.onrender.com & https://groupthink-server.onrender.com
+
+**Repo link:** https://github.com/scianbird/groupthink
 
 We created the user -- someone planning a trip with friends -- and wrote our user stories with them in mind.
 
@@ -36,6 +46,21 @@ As is the case with the provided user stories in our weekly assignments, we also
 📕 We want different visual themes, so that different friendgroups feel the app "represents" them
 
 📕 We want the app to be accessible with alt tags, ARIA labels and by keeping in mind user experience when choosing font/colours/etc
+
+## Libraries / Frameworks & Packages
+
+Needed in order to run: express.js, pg, cors
+Used throughout the building: npm, Vite
+
+## How to run
+
+The app should run on the link opening .. (b ᵔ▽ᵔ)b
+
+## Lighthouse report:
+
+![screenshot of lighthouse report](/lighthouse_report.png)
+
+We aim to improve on our accessibility score by further use of alt tags and ARIA labels.
 
 ## The Building Process
 
