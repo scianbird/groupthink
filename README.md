@@ -58,7 +58,7 @@ The app should run on the link opening .. (b ᵔ▽ᵔ)b
 
 ## Lighthouse report:
 
-![screenshot of lighthouse report](/lighthouse_report.png)
+![screenshot of lighthouse report](/misc/lighthouse_report.png)
 
 We aim to improve on our accessibility score by further use of alt tags and ARIA labels.
 
